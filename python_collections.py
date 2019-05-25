@@ -31,7 +31,9 @@ def namedtuple_example():
 	c4 = Car._make(another_iter)
 	print('Car details initialized from another iterable-->', c4.Make, c4.Model, c4.Year)
 
-
+#Use of Deque already covered in palindrome_checker_deque.py
+def deque_example():
+	pass
 
 if __name__ == '__main__':
 	namedtuple_example()
