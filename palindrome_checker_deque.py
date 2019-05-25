@@ -1,3 +1,18 @@
+###############
+#Deque - pronounced as 'Deck' allows insertion and removal 
+#from both sides of the queue
+
+#Rear side is the left one and front side is on the right
+#Eg:
+#s = deque()
+#s.appendleft(1)  --> [1]
+#s.appendleft(2)  --> [2,1]
+#s.append(3)      --> [2,1,3] 
+#s.popleft()      --> [1,3] 
+#s.pop( )         --> [1] 
+################
+
+
 from collections import deque
 
 def palindrome_checker( palin_str ):
