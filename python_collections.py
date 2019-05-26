@@ -54,14 +54,35 @@ def counter_example():
 	print('Count of all elements in the counter->', c.items())
 
 	#Total count of all occurences of elements in the Counter
-	print('3 most common elements of the counter->', sum(c.values()))
+	print('Sum of count of all occurences of elements in the counter->', sum(c.values()))
 
 def orderedDict_example():
-	pass
+	from collections import OrderedDict as od
+	d = {'banana': 3, 'apple': 4, 'pear': 1, 'orange': 2}
+	od_key = od(sorted(d.items(),key=lambda s: s[0]))
+	od_value = od(sorted(d.items(), key=lambda s:s[1]))
+
+	#Ordered dict by dictionary key
+	print('Ordered dict by dictionary key->', od_key)
+
+	#Ordered dict by dictionary value
+	print('Ordered dict by dictionary value->', od_value)
+
 
 def defaultDict_example():
-	from collections import defaultdict
-		
+	from collections import defaultdict as dd
+	s = [('white',1),('yellow',2),('blue',3),('green',4),('yellow',5)]
+	d_list = dd(list) #Factory function here is a list which indicates values in the default dict will be stored as a list
+	for i,j in s:
+		d_list[i].append(j)
+	print('Default dict with list as the factory function->', d_list)
+
+	s1 = ['white','yellow','blue','green','yellow']
+	d_int = dd(int) #Factory function here is a int which indicates values in the default dict will be stored as an int
+	for i in s1:
+		d_int[i] += 1
+	print('Default dict with int as the factory function->', d_int)
+
 
 if __name__ == '__main__':
 	namedtuple_example()
