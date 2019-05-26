@@ -35,5 +35,36 @@ def namedtuple_example():
 def deque_example():
 	pass
 
+def counter_example():
+	from collections import Counter
+	#Counter extends from dict, stores  elements as keys and its count as values
+	c=Counter('abcdseefadhasfdjlfdleadfdsafsfdfgwwerewre')
+
+	#Unique elements of Counter
+	print('Elements of the counter->', set(c.elements()))
+
+	#3 most common elements of the Counter
+	print('3 most common elements of the counter->', c.most_common(3))
+
+	# n least common elements, n=3 for this example
+	#subtract n from -1, if we dont, then we get -1 and -2 which is the first 2 least common instead of 3 least common
+	print('n least common elements->', c.most_common()[:-3-1:-1]  )
+
+	#Get the count of all elements in the Counter
+	print('Count of all elements in the counter->', c.items())
+
+	#Total count of all occurences of elements in the Counter
+	print('3 most common elements of the counter->', sum(c.values()))
+
+def orderedDict_example():
+	pass
+
+def defaultDict_example():
+	from collections import defaultdict
+		
+
 if __name__ == '__main__':
 	namedtuple_example()
+	counter_example()
+	orderedDict_example()
+	defaultDict_example()
