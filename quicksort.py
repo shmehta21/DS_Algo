@@ -3,7 +3,7 @@
 #	 1.) Identifies a base/recursive case
 #	 2.) Divides and reduces the problem until it reaches the base case
 # a. Works by identifying a pivot element in the array and then shifts all elements < pivot to its left
-# b. all elements > pivot to its right. THen recursivley applies quicksort on left and right subarrays
+# b. all elements > pivot to its right. THen recursively applies quicksort on left and right subarrays
 # c. Finally concatenates all the sub arrays and produces a sorted array
 # Big-O complexity is O(nlogn)			
 ##############################
