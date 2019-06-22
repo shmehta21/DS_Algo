@@ -21,13 +21,10 @@ def quick_sort( myArr ):
 
 if __name__ == '__main__':
 	a1 = [4,5,1,3,7,9,8]
-	a1_sorted =quick_sort( a1 )
-	print('Sorted a1 ->', a1_sorted)
+	print(f'Sorted a1 -> {quick_sort( a1 )}')
 
 	a2 = [23,15,65,19,10,5,42,94,33]
-	a2_sorted = quick_sort( a2 )
-	print('Sorted a2 ->', a2_sorted)
+	print(f'Sorted a2 -> {quick_sort( a2 )}')
 
 	a3 = [5]
-	a3_sorted = quick_sort( a3 )
-	print('Sorted a3 ->', a3_sorted)
+	print(f'Sorted a3 -> {quick_sort( a3 )}')
