@@ -47,7 +47,7 @@ def counter_example():
 	print('3 most common elements of the counter->', c.most_common(3))
 
 	# n least common elements, n=3 for this example
-	#subtract n from -1, if we dont, then we get -1 and -2 which is the first 2 least common instead of 3 least common
+	#subtract n from -1, if we dont, then we would get 2 least common instead of 3 least common
 	print('n least common elements->', c.most_common()[:-3-1:-1]  )
 
 	#Get the count of all elements in the Counter
