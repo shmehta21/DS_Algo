@@ -33,6 +33,7 @@ def mergesort( lst ):
 	return merge( left, right )
 
 if __name__ == '__main__':
+	
 	print(f'Sorted array--> {mergesort([3,9,1,2,34,76,12,97,67])}')
 
 	print(f'Sorted array with 2 elements--> {mergesort([3,9])}')

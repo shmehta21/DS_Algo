@@ -91,6 +91,30 @@ class LinkedList( object ):
 		else:
 			previousNode.nextNode = currentNode.nextNode
 
+	def reverseList( self ):
+		''' Reverses the linked list '''
+		prev = None
+		cur = self.head
+		while cur:
+			nxt = cur.nextNode
+			cur.nextNode = prev 
+			prev = cur
+			cur = nxt
+		self.head = prev
+		'''
+		currentNode = self.head
+		prevNode = None
+		nextNode = None
+		while currentNode:
+			nextNode = currentNode.nextNode
+			currentNode.nextNode = prevNode
+			prevNode = currentNode
+			currentNode = nextNode
+
+
+		self.head = prevNode
+		'''
+
 
 	def traverseList( self ):
 		actualNode = self.head
@@ -124,4 +148,7 @@ if __name__ == '__main__':
 	linkedList.traverseList()
 	print('***************************************')
 	linkedList.insertAtPosition(5,2)
+	linkedList.traverseList()
+	print('***************************************')
+	linkedList.reverseList()
 	linkedList.traverseList()
