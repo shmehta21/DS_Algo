@@ -114,9 +114,14 @@ class BinarySearchTree(object):
 
 		return node.data
 
-	def traverse(self):
+	def traverse(self, style):
 		if self.root:
-			self.traverseInOrder(self.root)
+			if style == 'InOrder':
+				self.traverseInOrder(self.root)
+			elif style == 'PreOrder':
+				self.traversePreOrder(self.root)
+			else:
+				self.traversePostOrder(self.root)
 
 	def traverseInOrder(self, node):
 		''' InOrder traversal -> Left Root Right'''
@@ -128,18 +133,41 @@ class BinarySearchTree(object):
 		if node.rightChild:
 			self.traverseInOrder(node.rightChild)
 
+	def traversePreOrder(self, node):
+		print('%s' %node.data)
+
+		if node.leftChild:
+			self.traversePreOrder( node.leftChild )
+		if node.rightChild:
+			self.traversePreOrder( node.rightChild )
+
+	def traversePostOrder(self, node):
+		if node.leftChild:
+			self.traversePostOrder( node.leftChild )
+		if node.rightChild:
+			self.traversePostOrder( node.rightChild )
+
+		print('%s' % node.data)
+
+
 if __name__ == '__main__':
 	bst = BinarySearchTree()
 	bst.insert(10)
 	bst.insert(5)
-	bst.insert(15)
 	bst.insert(6)
+	bst.insert(15)
 	print('Integer BST')
 	print(bst.getMinValue())
 	print(bst.getMaxValue())
 	bst.remove(5)
 	print('Result of InOrder traversal for Integer BST')                                                                                      
-	bst.traverse()
+	bst.traverse(style='InOrder')
+
+	print('Result of PreOrder traversal for Integer BST')                                                                                      
+	bst.traverse(style='PreOrder')
+
+	print('Result of PostOrder traversal for Integer BST')                                                                                      
+	bst.traverse(style='PostOrder')
 
 	charbst = BinarySearchTree()
 	charbst.insert('C')
@@ -152,7 +180,7 @@ if __name__ == '__main__':
 	print(charbst.getMaxValue())
 	charbst.remove('Z')
 	print('Result of InOrder traversal for Character BST')                                                                                      
-	charbst.traverse()
+	charbst.traverse(style='InOrder')
 
 
 
