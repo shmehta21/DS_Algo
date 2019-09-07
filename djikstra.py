@@ -2,11 +2,12 @@
 # Djikstra's is a shortest path algorithm that calculates
 # the shortest path between two nodes using a greedy approach
 # Overall running time is O(VlogV+E)
-# We use a priority queue(heap) as we need to get the edge 
-# with the minimum edge wait on every iteration. On every iteration
-# we need to find the node with shortest path and the heap will have 
-# the node with shortest path as the root node. If we use any other data structure
-# the process of finding the node with shortest path on every iteration will reduce to O(n)
+# We use a priority queue(heap) as we need to get the node 
+# with the minimum weight on every iteration. The heap will have root node with weight 0
+# and the rest initialized to infinity. If we use any other data structure
+# the process of finding the node with shortest weight on every iteration will worsen to O(n)
+# With heapq a.k.a the 0th element is always the node with minimum weight
+# heapq.heapify operation sorts an unsorted list in a way that the 0th element will show up the lowest value
 ###########################################################
 
 import sys
