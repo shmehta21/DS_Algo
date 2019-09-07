@@ -6,7 +6,7 @@
 # with the minimum weight on every iteration. The heap will have root node with weight 0
 # and the rest initialized to infinity. If we use any other data structure
 # the process of finding the node with shortest weight on every iteration will worsen to O(n)
-# With heapq a.k.a the 0th element is always the node with minimum weight
+# With heapq a.k.a priority queue, the 0th element is always the node with minimum weight
 # heapq.heapify operation sorts an unsorted list in a way that the 0th element will show up the lowest value
 ###########################################################
 
