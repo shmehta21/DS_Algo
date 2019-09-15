@@ -23,7 +23,7 @@ class LinkedList( object ):
 		'''
 		self.size += 1
 		newNode  = Node( data )
-
+.
 		if not self.head:
 			self.head = newNode
 		else:

@@ -47,7 +47,7 @@ class Djikstras():
 		startVertex.minDistance = 0
 		heapq.heappush(q, startVertex)#Store the heap in a one dimensional array(list in python)
 
-		while len(q) > 0:
+		while q:
 			actualVertex = heapq.heappop(q) # return node with min distance as top of the heapq will always have the min element
 			for edge in actualVertex.adjacencyList:
 				u = edge.startVertex
