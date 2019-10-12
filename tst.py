@@ -1,4 +1,9 @@
 #Ternary search tree
+#This is similar to Trie but each node only has 3 children (left,middle and right).In this sense it is much better than 
+# a Trie as it saves space due to the limited # of references from each node.
+# This Data structure can be used for implementing auto-complete/type-ahead kind of functionalities.
+# It outperforms HashMap/dict as it just needs the first char to determine if the key is present on not
+# whereas a dict needs to compute the hash of the entire key to find out if the key exists.
 
 class Node(object):
 	def __init__(self, character):
@@ -56,9 +61,6 @@ class TST(object):
 			return node
 
 
-
-
-
 if __name__ == '__main__':
 	t = TST()
 	t.put("adam",100)
@@ -66,12 +68,10 @@ if __name__ == '__main__':
 	t.put("steve",300)
 	t.put("neil",65)
 
-
 	print(t.get("adam"))
 	print(t.get("neil"))
 	print(t.get("nail"))
 	print(t.get("tail"))
-
 
 	t.put("cat",20)
 	t.put("carrot",30)
