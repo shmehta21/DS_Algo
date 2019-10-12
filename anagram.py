@@ -1,5 +1,7 @@
 ###############
 # Given a string , check if its anagram of another string
+#Meaning: a word formed by rearranging the letters of another, 
+#such as spar, formed from rasp.
 ##############
 
 
@@ -20,4 +22,5 @@ def is_anagram(str1,str2):
 if __name__ == '__main__':
 	print(f'Car and Rac are anagrams? -> {is_anagram("Car".upper(),"Rac".upper())}')
 	print(f'Roast and Toast are anagrams? -> {is_anagram("Roast".upper(),"Toast".upper())}')
+	print(f'nayan and yanna are anagrams? -> {is_anagram("nayan".upper(),"yanna".upper())}')
 
