@@ -69,45 +69,17 @@ class LinkedList( object ):
 				current = current.nextNode
 				currentPosition += 1
 
-		
-	def remove( self, data ):
-		'''
-			Keep a pointer to prevNode, as once you find the node to be removed
-			prevNode.next will have to point to currentNode.next.
-			If head is to be removed make currentHead.nextNode as the new head 
-		'''
-		if self.head is None:
-			return
-		self.size -= 1
-		currentNode = self.head
-		previousNode = None
-
-		while currentNode.data != data:
-			previousNode = currentNode
-			currentNode = currentNode.nextNode
-
-		if previousNode is None:
-			self.head = currentNode.nextNode
-		else:
-			previousNode.nextNode = currentNode.nextNode
-
-	def reverseList( self ):
-		''' Reverses the linked list '''
-		prev = None
-		cur = self.head
-		while cur:
-			nxt = cur.nextNode
-			cur.nextNode = prev 
-			prev = cur
-			cur = nxt
-		self.head = prev
-
-
+	
 	def traverseList( self ):
 		actualNode = self.head
+		allElements = []
 		while actualNode is not None:
-			print('%d' % actualNode.data)
+			#print('%d' % actualNode.data)
+			allElements.append(actualNode.data)
 			actualNode = actualNode.nextNode
+			
+
+		return allElements
 
 	def actualSize( self ):
 		''' 
@@ -122,6 +94,19 @@ class LinkedList( object ):
 			actualNode = actualNode.nextNode;
 		return size
 
+	def findMiddleNode( self ):
+		''' Find the middle node of the list 
+		by maintaining 2 pointers. Slow will advance
+		by 1 position and fast will advance by 2 positions
+		'''
+		slowPtr = self.head
+		fastPtr = self.head
+		while fastPtr.nextNode and fastPtr.nextNode.nextNode:
+			slowPtr = slowPtr.nextNode
+			fastPtr = fastPtr.nextNode.nextNode
+
+		return slowPtr.data
+
 if __name__ == '__main__':
 	linkedList = LinkedList()
 	linkedList.insertAtPosition(3,0)
@@ -129,13 +114,15 @@ if __name__ == '__main__':
 	linkedList.insertAtPosition(1,0)
 	size = linkedList.size
 	linkedList.insertAtPosition(4, size)
-	linkedList.traverseList()
 	print('***************************************')
-	linkedList.remove(3)
-	linkedList.traverseList()
+	print(f'Middle node for {linkedList.traverseList()} is {linkedList.findMiddleNode()}')
+
+	linkedList1 = LinkedList()
+	linkedList1.insertAtPosition(3,0)
+	linkedList1.insertAtPosition(2,0)
+	linkedList1.insertAtPosition(1,0)
+	size = linkedList1.size
+	linkedList1.insertAtPosition(4, size)
+	linkedList1.insertAtPosition(5, size)
 	print('***************************************')
-	linkedList.insertAtPosition(5,2)
-	linkedList.traverseList()
-	print('***************************************')
-	linkedList.reverseList()
-	linkedList.traverseList()
+	print(f'Middle node for {linkedList1.traverseList()} is {linkedList1.findMiddleNode()}')
