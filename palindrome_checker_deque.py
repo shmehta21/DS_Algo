@@ -28,6 +28,7 @@ def palindrome_checker( palin_str ):
 		last_char  = palin_checker.pop()
 		if first_char.lower() != last_char.lower():
 			are_chars_equal = False
+			break
 	return are_chars_equal
 
 if __name__ == '__main__':
