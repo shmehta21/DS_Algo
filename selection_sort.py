@@ -45,6 +45,22 @@ def selection_sort_descending(arr):
 
 	else:
 		return 'Nothing to sort'
+
+#Time->O(n**2), Space->O(1)
+def selectionSortInPlace(arr):
+	if arr:
+		current_index = 0
+		while current_index < len(arr)-1:
+			smallest_index = current_index
+			for i in range(current_index+1, len(arr)):
+				if arr[smallest_index] >  arr[i]:
+					smallest_index = i
+			swap(current_index, smallest_index, arr)
+			current_index += 1
+		return arr
+
+def swap(currIdx, smallestIdx, arr):
+	arr[currIdx], arr[smallestIdx] = arr[smallestIdx], arr[currIdx]
 	
 
 if __name__ == '__main__':
@@ -53,3 +69,5 @@ if __name__ == '__main__':
 
 	newArr1 = selection_sort_descending([5,3,6,2,10])
 	print( 'New Arr in descending order ', newArr1 )
+
+	print(f'Selection sort in place->{selectionSortInPlace([5,3,6,2,10])}')

@@ -23,7 +23,7 @@ class Node(object):
 	def __init__( self, name):
 		self.name = name
 		self.visited = False
-		self.predecessor = None
+		self.predecessor = None 
 		self.adjacencyList = [] #neighbours of a node
 		self.minDistance = sys.maxsize #initialize the node to max value and then update as you traverse each node
 	'''

@@ -19,8 +19,14 @@ def merge( left, right ):
 			result.append(right[j])
 			j += 1
 
-	result += left[i:]# While iterating left and right arrays if one of those arrays gets exhausted, we put remaining elements in the result array
-	result += right[j:]
+	while i < len(left):# While iterating left and right arrays if one of those arrays gets exhausted, we put remaining elements in the result array
+		result.append(left[i])
+		i += 1
+		
+	while j < len(right):
+		result.append(right[j])
+		j += 1
+		
 	return result
 
 def mergesort( lst ):

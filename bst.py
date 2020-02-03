@@ -78,7 +78,7 @@ class BinarySearchTree(object):
 				return tempNode
 
 			print('Removing node with 2 children...')
-			tempNode = self.getPredecessor(node.leftChild)#get the greatest element from left subtree OR get the smallest itme from right subtree and swap it with root node
+			tempNode = self.getPredecessor(node.leftChild)#get the greatest element from left subtree OR get the smallest item from right subtree and swap it with root node
 			node.data = tempNode.data
 			node.leftChild = self.removeNode(tempNode.data, node.leftChild) #once swapped woth root node remove that particular left child
 
