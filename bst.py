@@ -11,7 +11,9 @@
 #Height-> # of layers determine the height of BST. IF height is 'h' , total # of nodes a BST can contain would be 2^(h-1).
 # So a BST with height 4 can have atmost 2^3 = 8 nodes
 
-
+#Balanced vs Unbalanced trees
+#At any given point the difference in the height of left v/s right subtree should not be
+#greater than 1. If that happens, the tree becomes Unbalanced
 
 #Traversals in Recursive Order
 #1. InOrder = Left, Root, Right
